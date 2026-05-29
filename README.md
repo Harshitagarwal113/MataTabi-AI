@@ -1,6 +1,8 @@
-# ⊞ MataTabi-AI
-
-**The Ultimate Windows Operating System Technical Assistant**
+<div align="center">
+  <img src="public/logo.png" alt="MataTabi-AI Logo" width="120" />
+  <h1>⊞ MataTabi-AI</h1>
+  <p><b>The Ultimate Windows Operating System Technical Assistant</b></p>
+</div>
 
 MataTabi-AI is an elite, locally-orchestrated AI assistant specialized entirely in Windows OS environments. Designed by **Harshit Agarwal**, this application utilizes a custom "Glass Box Architecture" to provide highly accurate, safe, and actionable technical support for Windows systems.
 
