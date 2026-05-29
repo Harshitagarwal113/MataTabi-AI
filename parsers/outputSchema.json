@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "query_type": {
+      "type": "string",
+      "description": "Category of the user query (e.g., Troubleshooting, Configuration, Information)."
+    },
+    "domain": {
+      "type": "string",
+      "description": "The specific Windows domain (e.g., Registry, Active Directory, Networking)."
+    },
+    "answer": {
+      "type": "string",
+      "description": "The final structured technical explanation or resolution."
+    },
+    "commands": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of executable commands (PowerShell/CMD)."
+    },
+    "references": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Related documentation, KB articles, or external resources."
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "AI confidence in the provided solution (0.0 to 1.0)."
+    }
+  },
+  "required": [
+    "query_type",
+    "domain",
+    "answer",
+    "commands",
+    "references",
+    "confidence_score"
+  ]
+}
