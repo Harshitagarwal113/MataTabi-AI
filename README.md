@@ -1,6 +1,6 @@
 <div align="center">
   <img src="public/logo.png" alt="MataTabi-AI Logo" width="120" />
-  <h1>⊞ MataTabi-AI</h1>
+  <h1>MataTabi-AI</h1>
   <p><b>The Ultimate Windows Operating System Technical Assistant</b></p>
 </div>
 
