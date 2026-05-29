@@ -1,20 +1,13 @@
 export default function Header({ toggleSidebar }) {
   return (
-    <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-background border-b border-card">
-      <div className="flex items-center gap-4">
-        <button className="md:hidden text-textMain text-xl" onClick={toggleSidebar}>
-          ☰
+    <header className="sticky top-0 z-20 flex items-center justify-between px-4 py-3 bg-background text-textMain md:hidden">
+      <div className="flex items-center gap-3">
+        <button className="text-textMuted hover:text-textMain transition-colors p-1" onClick={toggleSidebar}>
+          <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
-        <div className="flex flex-col">
-          <h1 className="text-xl font-bold text-textMain tracking-tight">MataTabi-AI</h1>
-          <span className="text-xs text-primary font-medium tracking-wide uppercase">Windows Expert</span>
-        </div>
-      </div>
-      <div className="flex items-center gap-6">
-        <div className="hidden sm:flex items-center gap-2 bg-secondary px-3 py-1.5 rounded-full border border-gray-800">
-          <span className="h-2 w-2 rounded-full bg-success animate-pulse"></span>
-          <span className="text-xs text-textMain font-medium">System Online</span>
-        </div>
+        <span className="text-lg font-semibold text-textMuted px-2 py-1.5">
+          MataTabi-AI
+        </span>
       </div>
     </header>
   );

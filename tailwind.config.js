@@ -7,17 +7,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#3b82f6',
-        secondary: '#18181b',
-        accent: '#0ea5e9',
-        background: '#09090b',
-        card: '#18181b',
-        textMain: '#fafafa',
-        success: '#10b981',
+        primary: '#ffffff',
+        secondary: '#212121',
+        accent: '#10a37f',
+        background: '#171717',
+        sidebar: '#000000',
+        card: '#212121',
+        textMain: '#ececec',
+        textMuted: '#b4b4b4',
+        borderLight: '#4d4d4f',
+        success: '#10a37f',
         warning: '#f59e0b',
         error: '#ef4444',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

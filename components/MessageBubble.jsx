@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown';
 import ResponseCard from './ResponseCard';
 
 export default function MessageBubble({ message }) {
@@ -5,10 +6,16 @@ export default function MessageBubble({ message }) {
 
   return (
     <div className={`flex w-full mb-8 animate-fade-in ${isUser ? 'justify-end' : 'justify-start'}`}>
-      <div className={`max-w-[90%] md:max-w-[85%] ${isUser ? 'bg-primary text-white rounded-3xl rounded-tr-sm' : 'bg-card text-textMain rounded-3xl rounded-tl-sm border border-secondary shadow-lg'} px-6 py-5`}>
-        <div className="text-[15px] leading-relaxed whitespace-pre-wrap">
-          {message.text}
-        </div>
+      <div className={`max-w-[90%] md:max-w-[85%] ${isUser ? 'bg-secondary text-textMain rounded-3xl px-5 py-3' : 'bg-transparent text-textMain px-0 py-2'}`}>
+        {isUser ? (
+          <div className="text-[15px] leading-relaxed whitespace-pre-wrap">
+            {message.text}
+          </div>
+        ) : (
+          <div className="text-[15px] leading-relaxed prose prose-invert prose-p:leading-relaxed prose-pre:bg-[#0B0F19] prose-pre:border prose-pre:border-gray-800 prose-pre:shadow-2xl prose-a:text-accent prose-a:no-underline hover:prose-a:underline max-w-none">
+            <ReactMarkdown>{message.text}</ReactMarkdown>
+          </div>
+        )}
         
         {/* AI Thought Process (ReAct) */}
         {!isUser && message.meta && message.meta.thought && (

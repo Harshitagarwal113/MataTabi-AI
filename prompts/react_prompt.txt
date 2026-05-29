@@ -21,7 +21,7 @@ Use the following strict JSON format for your responses at each step. Your inter
   "reflection": "Your assessment of the previous observation. Did it succeed? Does it move you closer to the goal?",
   "query_type": "The category of the query (e.g., Troubleshooting, Configuration, Information).",
   "domain": "The specific Windows domain (e.g., Registry, Active Directory, Networking).",
-  "answer": "The final structured answer to the user.",
+  "answer": "The final, highly structured answer to the user. You MUST STRICTLY format this using rich Markdown. You MUST include:\n1. A brief introduction.\n2. Clear headings (using ## or ###) for different sections.\n3. Bulleted or numbered lists for steps.\n4. Code blocks (```) for any commands or scripts.\nFailure to use this strict Markdown structure is unacceptable.",
   "commands": ["Command 1", "Command 2"],
   "references": ["Reference 1", "Reference 2"],
   "confidence_score": 0.95

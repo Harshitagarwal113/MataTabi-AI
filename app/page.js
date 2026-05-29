@@ -5,6 +5,8 @@ import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import ChatWindow from '../components/ChatWindow';
 import ChatInput from '../components/ChatInput';
+import EmptyState from '../components/EmptyState';
+import SuggestedQuestions from '../components/SuggestedQuestions';
 
 const generateId = () => Math.random().toString(36).substring(2, 15);
 
@@ -144,23 +146,42 @@ export default function Home() {
       />
       
       <div className="flex-1 flex flex-col min-w-0 h-full relative z-10">
-        <Header toggleSidebar={toggleSidebar} />
+        <Header toggleSidebar={toggleSidebar} onNewChat={handleNewChat} />
         
-        <main className="flex-1 flex flex-col relative h-[calc(100vh-65px)]">
-          <ChatWindow 
-            messages={currentMessages} 
-            isLoading={isLoading} 
-            onSuggest={handleSuggest}
-          />
-          
-          <div className="shrink-0">
-            <ChatInput 
-              input={input} 
-              setInput={setInput} 
-              onSend={handleSend} 
-              isLoading={isLoading} 
-            />
-          </div>
+        <main className="flex-1 flex flex-col relative bg-background overflow-hidden">
+          {currentMessages.length === 0 ? (
+            <div className="flex-1 flex flex-col items-center justify-center pt-8 pb-4">
+              <div className="w-full max-w-3xl mb-8">
+                <EmptyState />
+              </div>
+              <div className="w-full max-w-3xl flex flex-col items-center">
+                <ChatInput 
+                  input={input} 
+                  setInput={setInput} 
+                  onSend={handleSend} 
+                  isLoading={isLoading} 
+                />
+                <div className="mt-4 w-full">
+                  <SuggestedQuestions onSuggest={handleSuggest} />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <>
+              <ChatWindow 
+                messages={currentMessages} 
+                isLoading={isLoading} 
+              />
+              <div className="shrink-0 w-full max-w-4xl mx-auto pb-4">
+                <ChatInput 
+                  input={input} 
+                  setInput={setInput} 
+                  onSend={handleSend} 
+                  isLoading={isLoading} 
+                />
+              </div>
+            </>
+          )}
         </main>
       </div>
 

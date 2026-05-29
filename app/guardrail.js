@@ -18,7 +18,7 @@ export async function runGuardrail(userQuery) {
     return { status: "blocked", reason: "Invalid input type." };
   }
 
-  if (userQuery.length > 1500) {
+  if (userQuery.length > 1000) {
     return { status: "blocked", reason: "Query length exceeds maximum limit." };
   }
 
