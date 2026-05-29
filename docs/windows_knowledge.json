@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "name": "Networking Diagnostics",
+      "entries": [
+        {
+          "topic": "DNS Cache Flush",
+          "keywords": ["dns", "cache", "flush", "network", "internet", "lookup"],
+          "content": "To flush the DNS cache in Windows, open PowerShell as Administrator and run: `Clear-DnsClientCache`. Alternatively, in CMD use `ipconfig /flushdns`."
+        },
+        {
+          "topic": "Reset Network Adapter",
+          "keywords": ["adapter", "reset", "wifi", "ethernet", "connection", "restart"],
+          "content": "To restart a network adapter via PowerShell, use: `Restart-NetAdapter -Name 'Wi-Fi' -Confirm:$false`."
+        }
+      ]
+    },
+    {
+      "name": "Windows Security",
+      "entries": [
+        {
+          "topic": "PowerShell Execution Policy",
+          "keywords": ["powershell", "execution policy", "script", "blocked", "ps1", "security"],
+          "content": "If PowerShell scripts are blocked from running, set the execution policy to RemoteSigned for the current user: `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force`."
+        },
+        {
+          "topic": "Windows Defender Firewall Reset",
+          "keywords": ["firewall", "reset", "defender", "ports", "blocked"],
+          "content": "To reset the Windows Firewall to its default settings, run: `netsh advfirewall reset` in an elevated command prompt."
+        }
+      ]
+    }
+  ]
+}

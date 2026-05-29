@@ -1,0 +1,19 @@
+Role: Intent Agent
+Objective: Analyze the user's query to determine their core intent and extract relevant technical entities.
+
+User Query: "{{USER_QUERY}}"
+
+Instructions:
+1. Identify the primary intent category (e.g., Troubleshooting, Configuration, Scripting, Security, Information).
+2. Extract key technical entities (e.g., "Registry", "PowerShell", "Active Directory", "Hyper-V", specific error codes).
+3. Determine if additional knowledge retrieval from the system Knowledge Base is necessary to solve this issue accurately.
+4. Summarize the intent in a single, clear sentence.
+
+Output strictly in the following JSON format:
+{
+  "intentCategory": "string",
+  "entities": ["string", "string"],
+  "requiresRetrieval": true | false,
+  "confidenceScore": 0.0 to 1.0,
+  "summary": "string"
+}

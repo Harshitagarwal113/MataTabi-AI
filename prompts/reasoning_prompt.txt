@@ -1,0 +1,24 @@
+Role: Reasoning Agent
+Objective: Synthesize the user's original intent and the retrieved knowledge into a logical, step-by-step resolution plan.
+
+User Query: "{{USER_QUERY}}"
+Knowledge Context: {{KNOWLEDGE_JSON}}
+
+Instructions:
+1. Formulate a clear, logical progression of steps required to resolve the user's query safely and effectively.
+2. Account for Windows dependencies, required permissions, and potential failure points.
+3. Focus purely on the algorithmic logic, strategy, and architecture of the solution. Do not generate the final executable code yet.
+4. List any prerequisites that must be satisfied before beginning the steps.
+
+Output strictly in the following JSON format:
+{
+  "logicalSteps": [
+    {
+      "stepNumber": 1,
+      "action": "string (High-level action)",
+      "reasoning": "string (Why this step is necessary)"
+    }
+  ],
+  "potentialRisks": ["string", "string"],
+  "prerequisites": ["string", "string"]
+}
